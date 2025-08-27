@@ -82,7 +82,7 @@ def humanizar_texto(texto):
 # -------------------------------
 @app.route('/googlef9aea8b2c7991914.html')
 def google_verification():
-    return send_from_directory('static', 'googlef9aea8b2c7991914.html')
+    return "google-site-verification: googlef9aea8b2c7991914.html"
     
 @app.route("/humanizador", methods=["GET", "POST"])
 def index():
