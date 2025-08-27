@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detector de IA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+    textarea {
+      width: 80%;
+      height: 100px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+
+    /* Velocímetro */
+    .gauge {
+      width: 300px;
+      height: 150px;
+      background: #222;
+      border-radius: 150px 150px 0 0;
+      margin: 40px auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .needle {
+      width: 4px;
+      height: 140px;
+      background: red;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform-origin: bottom center;
+      transform: rotate(0deg);
+      transition: transform 1s ease-out;
+    }
+    .score {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Detector de Texto por IA</h1>
+  <p>Ingresa tu texto y analiza si parece generado por IA:</p>
+  
+  <textarea id="texto" placeholder="Escribe aquí tu texto..."></textarea><br>
+  <button onclick="analizarTexto()">Analizar</button>
+  
+  <div class="gauge">
+    <div class="needle" id="needle"></div>
+  </div>
+  <div class="score" id="score">0%</div>
+
+  <script>
+    async function analizarTexto() {
+      const texto = document.getElementById("texto").value;
+      
+      const res = await fetch("/analizar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ texto })
+      });
+      const data = await res.json();
+      
+      const score = data.score;
+      document.getElementById("score").innerText = score + "%";
+
+      // Mover aguja (de -90° a +90° para 0%-100%)
+      const angle = (score * 1.8) - 90;
+      document.getElementById("needle").style.transform = `rotate(${angle}deg)`;
+    }
+  </script>
+</body>
+</html>

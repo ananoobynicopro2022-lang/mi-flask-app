@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+  font-family: 'animado';
+  src: url('/static/fonts/animado.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+section .contenido {
+  font-family: 'Fortnite', sans-serif;
+}
+
+
+:root {
+    --azuloscuro: #01244e;
+    --azulclaro: #043872;
+    --anaranjado: #fa6f38;
+}
+
+* {
+    font-family: 'animado', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+}
+
+
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background-image: url('img/fondo1.png');
+    transform: scale(0.9);      /* escala toda la página al 90% */
+    transform-origin: top left; /* que el zoom salga desde la esquina superior izquierda */
+    width: 111%;   
+    
+    
+
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* bloquea la barra de scroll */
+}
+
+header .imagen {
+  filter: brightness(0) invert(1); /* convierte todo a blanco */
+}
+
+.boton1 {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 3rem;
+    border-radius: 5rem;
+    background: var(--anaranjado);
+    font-size: 1.8rem;
+    color: var(--azuloscuro);
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0, 0,  0, .1); 
+    transition: all .3s linear;
+}
+
+.boton2 {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 3rem;
+    border-radius: 5rem;
+    background:var(--anaranjado);
+    font-size: 1.8rem;
+    color: var(--azuloscuro);
+    cursor: pointer;
+    
+    transition: all .3s linear;
+}
+
+header {
+  display: flex;              /* activa flexbox */
+  align-items: flex-start;        /* centra verticalmente */
+  justify-content: flex-end;/* lo manda a la izquierda */
+  padding: 10px 20px;         /* espacio interno opcional */
+}
+
+header .imagen {
+  width: 1500px;   /* cambia el tamaño (ajusta a tu gusto) */
+  height: auto;   /* mantiene proporción */
+  filter: brightness(0) invert(1); /* lo pone blanco */
+  margin-top: -20px;
+}
+
+header {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+header .imagen {
+
+  transform: translateY(-200px); /* lo sube visualmente 20px */
+}
+
+section {
+  display: flex;
+  justify-content:flex-end;   /* centra horizontal */
+  margin-top: 20px;          /* espacio debajo del header */
+  margin-right: 150px;
+}
+
+section .contenido {
+  width: 830px;              /* mismo ancho que el logo (ajusta al tuyo) */
+  text-align: justify;
+  color: white;             /* texto naranja */
+  font-weight: bold;
+  transform: translateY(-650px);
+  font-size: 24px;
+  letter-spacing: 2px;
+
+
+  font-family: 'Fortnite', sans-serif;
+
+  line-height: 2;
+   
+  /* Trazo negro */
+  -webkit-text-stroke: .5px black; 
+  text-stroke: 1px black;    /* (para navegadores que lo soporten) */
+}
+
+.botones {
+  position:absolute;   /* lo sacamos del flujo normal */
+  top: 600px;           /* ajústalo para que suba más o menos */
+  left: 200px;           /* pegado al borde izquierdo */
+  display: flex;
+  gap: 70px;            /* espacio entre botones */
+     padding: 20px 50px;   /* agranda el botón (alto x ancho) */
+    font-size: 20px;      /* agranda el texto dentro */
+    border-radius: 10px;  /* bordes más redondeados (opcional) */
+    text-decoration: none;
+    
+    color: var(--azuloscuro);         /* color del texto */
+    font-weight: bold;    /* hace el texto más grueso */
+    
+    margin-top: 1rem;
+    padding: .8rem 3rem;
+    border-radius: 5rem;
+    
+    font-size: 1.8rem;
+    color: var(--azuloscuro);
+    cursor: pointer;
+    
+    transition: all .3s linear;
+}
+
+.boton1:hover {
+    transform: scale(1.5);
+}
+
+.boton2:hover{
+    transform: scale(1.5);
+}
+
+  

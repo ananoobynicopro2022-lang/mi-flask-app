@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+  font-family: 'animado';
+  src: url('/static/fonts/animado.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+    font-family: 'animado', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: lowercase;
+    letter-spacing: 2px; 
+    
+}
+
+
+
+
+:root {
+    --azuloscuro: #01244e;
+    --azulclaro: #043872;
+    --anaranjado: #fa6f38;
+    --blanco:#ffebd5;
+}
+
+/*general*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+   background-image: url('img/fondo2.png');
+}
+
+/* Contenedor principal */
+.container {
+    background: white;
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 600px;
+}
+
+/* Títulos */
+h1, h2 {
+    text-align: center;
+    color: #333;
+     letter-spacing: 3px;   /* espacio entre letras */
+    font-weight: bold;     /* lo hace más grueso */
+    margin-bottom: 20px;   /* espacio debajo del título */
+    color: var(--anaranjado);
+    text-shadow: 
+        -2px -2px 0 black,  
+         2px -2px 0 black,
+        -2px  2px 0 black,
+         2px  2px 0 black;
+
+}
+
+/* Formulario */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+}
+
+/* Botón */
+button {
+    background: var(--anaranjado);
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Resultado */
+.resultado {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f1f9f6;
+    border-left: 5px solid #28a745;
+    border-radius: 8px;
+}

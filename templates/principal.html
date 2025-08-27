@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HumanAPA</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesprin.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="encabezado">
+            <img class="imagen" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+
+        </a>
+        
+        
+    </header>
+    <section>
+         <div class="contenido">
+    <h3>
+      HumanAPA es una plataforma web que ayuda a estudiantes y profesionales a crear documentos en formato APA de manera automática y, además, cuenta con un humanizador de texto que transforma escritos con IA en versiones más humanas, claras y fáciles de leer.
+    </h3>
+    
+
+    </section>
+    
+     <section>    <div class="botones">
+      <a href="{{ url_for('generador') }}" class="boton1">GENERADOR APA</a>
+      <a href="{{ url_for('index') }}" class="boton2">HUMANIZADOR</a>
+    </div>
+  </div>
+</section>
+
+    
+
+    
+
+</html>

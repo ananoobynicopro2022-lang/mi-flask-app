@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>humanizador</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Humanizador de Texto</h1>
+
+        <form method="POST" class="formulario">
+            <label for="texto">Pega tu texto aquí:</label>
+            <textarea id="texto" name="texto" placeholder="Escribe o pega tu texto..."></textarea>
+            <button type="submit">Humanizar texto</button>
+        </form>
+
+        {% if resultado %}
+            <div class="resultado">
+                <h2>Texto humanizado:</h2>
+                <p>{{ resultado }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
