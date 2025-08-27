@@ -19,6 +19,10 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
 
 app = Flask(__name__)
 
+@app.route('/googlef9aea8b2c7991914.html')
+def google_verification():
+    return "google-site-verification: googlef9aea8b2c7991914.html"
+
 import random, re
 
 def humanizar_texto(texto):
@@ -80,9 +84,7 @@ def humanizar_texto(texto):
 # -------------------------------
 # RUTAS HUMANIZADOR
 # -------------------------------
-@app.route('/googlef9aea8b2c7991914.html')
-def google_verification():
-    return "google-site-verification: googlef9aea8b2c7991914.html"
+
     
 @app.route("/humanizador", methods=["GET", "POST"])
 def index():
