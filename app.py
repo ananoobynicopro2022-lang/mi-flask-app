@@ -80,6 +80,10 @@ def humanizar_texto(texto):
 # -------------------------------
 # RUTAS HUMANIZADOR
 # -------------------------------
+@app.route('/google1234567890abcdef.html')
+def google_verification():
+    return send_from_directory('.', 'google1234567890abcdef.html')
+    
 @app.route("/humanizador", methods=["GET", "POST"])
 def index():
     resultado = ""
