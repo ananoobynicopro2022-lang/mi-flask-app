@@ -26,58 +26,43 @@ def google_verification():
 import random, re
 
 def humanizar_texto(texto):
+    import random, re
+
+    # Diccionario de reemplazos más variado
     reemplazos = {
-        "sin embargo": ["pero igual", "aunque claro", "eso sí", "pero bueno"],
-        "en conclusión": ["al final de todo", "resumiendo un poco", "si lo pensamos bien"],
-        "por lo tanto": ["entonces", "así que", "total que", "de ahí salió que"],
-        "debido a": ["porque", "ya que", "gracias a"],
-        "utilizar": ["usar", "hacer uso de", "aprovechar"],
-        "es importante señalar que": ["vale la pena decir que", "no olvidemos que", "ojo con esto"],
-        "en la actualidad": ["hoy en día", "ahorita mismo", "ahora"],
-        "dicho de otra manera": ["mejor dicho", "o sea", "visto de otro modo"],
-        "por otra parte": ["además", "de paso", "también"]
+        "impacto positivo": ["efecto beneficioso", "resultado favorable", "aportación valiosa"],
+        "contribuyendo": ["lo cual ayuda a", "favoreciendo", "aportando a"],
+        "promoviendo": ["fomentando", "impulsando", "apoyando"],
+        "utilizar": ["emplear", "hacer uso de", "usar"],
+        "tecnología": ["sistema", "método", "herramienta tecnológica"],
+        "optimizar": ["mejorar", "hacer más eficiente", "perfeccionar"],
+        "huella de carbono": ["emisiones de CO₂", "rastro ambiental", "contaminación generada"],
+        "nuestro": ["la presente", "esta propuesta", "la iniciativa"],
+        "ODS": ["Objetivo de Desarrollo Sostenible", "ODS número", "meta de desarrollo sostenible"],
     }
 
-    # Reemplazo aleatorio
     for original, opciones in reemplazos.items():
         if original in texto:
             texto = texto.replace(original, random.choice(opciones))
 
-    # Cambiar estructura de frases
+    # Cortar frases largas para dar ritmo humano
     frases = re.split(r'(?<=[.!?]) +', texto)
     frases_mod = []
     for f in frases:
-        if len(f.split()) > 20 and random.random() < 0.5:
-            # a veces corto, a veces no
-            partes = f.split(",")
-            if len(partes) > 1:
-                frases_mod.append(partes[0])
-                frases_mod.append("De hecho, " + partes[1].strip())
-            else:
-                frases_mod.append(f)
-        elif random.random() < 0.2:
-            frases_mod.append("Pues mira, " + f.lower())
+        palabras = f.split()
+        if len(palabras) > 22:
+            corte = random.randint(10, len(palabras) - 8)
+            f1 = " ".join(palabras[:corte]) + "."
+            f2 = " ".join(palabras[corte:])
+            frases_mod.extend([f1, f2])
         else:
             frases_mod.append(f)
+
     texto = " ".join(frases_mod)
 
-    # Errores sutiles
-    errores = {
-        "á": ["a"],
-        "é": ["e"],
-        "í": ["i"],
-        "ó": ["o"],
-        "ú": ["u"],
-        "  ": [" "],  # dobles espacios
-    }
-    for original, variaciones in errores.items():
-        if original in texto and random.random() < 0.3:
-            texto = texto.replace(original, random.choice(variaciones))
-
-    # Coletillas opcionales
-    coletillas = ["¿me entiendes?", "creo yo", "la verdad", "siendo sincero", "¿sí o qué?"]
-    if random.random() < 0.3:
-        texto += " " + random.choice(coletillas)
+    # Variar inicios de párrafos
+    inicios = ["Cabe señalar que", "Es claro que", "En este contexto", "Vale la pena mencionar que"]
+    texto = re.sub(r'(^|\n)([A-ZÁÉÍÓÚ])', lambda m: m.group(1) + random.choice(inicios) + " " + m.group(2).lower(), texto, count=2)
 
     return texto.strip()
 

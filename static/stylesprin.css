@@ -169,3 +169,66 @@ section .contenido {
 }
 
   
+@media (max-width: 768px) {
+  body {
+    transform: none;
+    width: 100%;
+    overflow-y: auto; /* permitir scroll */
+  }
+
+  header .imagen {
+    width: 80vw;     /* ocupa casi toda la pantalla */
+    transform: none;
+    margin: 0 auto;
+  }
+
+  section {
+    justify-content: center;
+    margin: 1rem;
+  }
+
+  section .contenido {
+    width: 90%;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    transform: none;
+  }
+
+  .botones {
+    position: relative;
+    top: auto;
+    left: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+}
+
+/* -------------------------------
+   RESPONSIVE: TELEVISORES GRANDES
+-------------------------------- */
+@media (min-width: 1600px) {
+  header .imagen {
+    width: 40vw;
+    max-width: 1800px;
+  }
+
+  section .contenido {
+    width: 50vw;
+    font-size: 3rem;
+    line-height: 2.2;
+  }
+
+  .botones {
+    top: 70vh;
+    left: 15vw;
+    gap: 6rem;
+  }
+
+  .boton1, .boton2 {
+    font-size: 2.2rem;
+    padding: 1rem 4rem;
+  }
+}
